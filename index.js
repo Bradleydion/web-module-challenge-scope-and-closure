@@ -63,11 +63,10 @@ function counter2() {
 Write a function called `inning` that returns a random number of points that a team scored in an inning. This should be a whole number between 0 and 2. */
 
 function inning(/*Code Here*/){
-
-  Math.round(math.random)
-
+  let points = Math.round(Math.random())
+  return points
 }
-
+console.log(inning())
 /* Task 3: finalScore()
 
 Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
@@ -82,11 +81,25 @@ finalScore(inning, 9) might return:
 
 */ 
 
-function finalScore(/*code Here*/){
+function finalScore(inning,numberOfInning){
 
-  /*Code Here*/
+// for(let i =0; i< numberOfInning; i++){
+//   let home = inning()
+//   return(home)
+// }
+// for(let o =0; o< numberOfInning; o++){
+//   let away = inning()
+//   return(away)
+// }
 
-}
+let homeScore= 0
+ return function inning(){
+   
+ }
+
+
+
+// }
 
 /* Task 4: 
 
