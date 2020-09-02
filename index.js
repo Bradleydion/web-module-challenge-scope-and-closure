@@ -28,10 +28,16 @@ function processFirstItem(stringList, callback) {
  * 
  * 1. What is the difference between counter1 and counter2?
  * 
+ * Counter 1 has a callback function. 
+ * 
  * 2. Which of the two uses a closure? How can you tell?
+ * 
+ * Counter 1 has a closure, and you can tell because the callback function is returning a count outside of the function. 
  * 
  * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better? 
  *
+ *Counter 1 is prefereable for when you want to have a function on stand by and reused over and over again, or have a function primed when results are given. Counter 2 would be used best if a function only needs to be used once.  
+ * 
 */
 
 // counter1 code
@@ -58,7 +64,7 @@ Write a function called `inning` that returns a random number of points that a t
 
 function inning(/*Code Here*/){
 
-    /*Code Here*/
+  Math.round(math.random)
 
 }
 
