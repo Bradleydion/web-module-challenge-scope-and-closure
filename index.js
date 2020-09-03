@@ -112,18 +112,19 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 
 
-function scoreboard( callBackFunctionTwo, inningNumber) {
- function getInningScore(){
+function scoreboard(callback2, inningNumber) {
   let homeScore2= 0
   let awayScore2= 0
-  let inningId= 0
-  for(let i =0; i< 9; i++){
-  homeScore2+=(callBackFunctionTwo())
-  awayScore2+=(callBackFunctionTwo())
-  inningId++
-  }
+  for(let i =1; i<=inningNumber; i++){
+  homeScore2+=(callback2())
+  awayScore2+=(callback2())
  }
- getInningScore()
-return {inningID:'inning', homeScore2, "-": awayScore2 }
+ if (inningNumber === 1){
+   return {'1st inning':awayScore2, homeScore2}
+ }
+
+
+
+
 }
-console.log(scoreboard(inning(),2))
+console.log(scoreboard(inning(),1))
