@@ -82,13 +82,26 @@ finalScore(inning, 9) might return:
 function finalScore(callBack,numberOfInning){
   let homeScore= 0
   let awayScore= 0
-  for(let i =0; i< numberOfInning; i++){
-  homeScore+=(callBack())
-  awayScore+=(callBack())
-  }
+  for(let i =1; i<=numberOfInning; i++){
+  homeScore+=callBack()
+  awayScore+=callBack()
+  if (i=== 1){
+      console.log ('1st inning', awayScore, "-", homeScore)
+     }
+     else if(i === 2){
+      console.log ('2nd inning', awayScore, "-", homeScore)
+     }
+     else if(i === 3){
+      console.log ('3rd inning', awayScore, "-", homeScore)
+     }
+     else{
+      console.log (i,'th inning', awayScore, "-", homeScore)
+     }
+    }
+  
 return {"Home":homeScore, "Away":awayScore}
 }
-console.log(finalScore(inning,9))
+// console.log(finalScore(inning,9))
 
 
 /* Task 4: 
@@ -112,19 +125,8 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 
 
-function scoreboard(callback2, inningNumber) {
-  let homeScore2= 0
-  let awayScore2= 0
-  for(let i =1; i<=inningNumber; i++){
-  homeScore2+=(callback2())
-  awayScore2+=(callback2())
- }
- if (inningNumber === 1){
-   return {'1st inning':awayScore2, homeScore2}
- }
-
-
-
-
+function scoreboard(finalScore,inning , inningNumber) {
+  result =finalScore(inning, inningNumber)
+return `Final Score: ${result.Away} - ${result.Home}`
 }
-console.log(scoreboard(inning(),1))
+console.log(scoreboard(finalScore,inning,9))
