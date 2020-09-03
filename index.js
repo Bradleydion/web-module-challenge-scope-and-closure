@@ -66,7 +66,7 @@ function inning(/*Code Here*/){
   let points = Math.round(Math.random())
   return points
 }
-console.log(inning())
+// console.log(inning())
 /* Task 3: finalScore()
 
 Write a higher order function called `finalScore` that accepts the callback function `inning` (from above) and a number of innings and and returns the final score of the game in the form of an object.
@@ -78,28 +78,18 @@ finalScore(inning, 9) might return:
   "Home": 11,
   "Away": 5,
 }
-
 */ 
+function finalScore(callBack,numberOfInning){
+  let homeScore= 0
+  let awayScore= 0
+  for(let i =0; i< numberOfInning; i++){
+  homeScore+=(callBack())
+  awayScore+=(callBack())
+  }
+return {"Home":homeScore, "Away":awayScore}
+}
+console.log(finalScore(inning,9))
 
-function finalScore(inning,numberOfInning){
-
-// for(let i =0; i< numberOfInning; i++){
-//   let home = inning()
-//   return(home)
-// }
-// for(let o =0; o< numberOfInning; o++){
-//   let away = inning()
-//   return(away)
-// }
-
-let homeScore= 0
- return function inning(){
-   
- }
-
-
-
-// }
 
 /* Task 4: 
 
@@ -122,8 +112,18 @@ and returns the score at each pont in the game, like so:
 Final Score: awayTeam - homeTeam */
 
 
-function scoreboard(/* CODE HERE */) {
-  /* CODE HERE */
+function scoreboard( callBackFunctionTwo, inningNumber) {
+ function getInningScore(){
+  let homeScore2= 0
+  let awayScore2= 0
+  let inningId= 0
+  for(let i =0; i< 9; i++){
+  homeScore2+=(callBackFunctionTwo())
+  awayScore2+=(callBackFunctionTwo())
+  inningId++
+  }
+ }
+ getInningScore()
+return {inningID:'inning', homeScore2, "-": awayScore2 }
 }
-
-
+console.log(scoreboard(inning(),2))
